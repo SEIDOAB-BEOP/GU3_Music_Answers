@@ -20,9 +20,17 @@ class Program
             {
                 Console.WriteLine($"  - First member is {item.Members[0].FirstName} {item.Members[0].LastName}");
             }
+            else
+            {
+                Console.WriteLine("   - No Members in the group");
+            }
             if (item.Albums.Count > 0)
             {
                 Console.WriteLine($"  - First Album is {item.Albums[0].Name} released {item.Albums[0].ReleaseYear}");
+            }
+            else
+            {
+                Console.WriteLine("  - No Albums released by the group");
             }
         }
 

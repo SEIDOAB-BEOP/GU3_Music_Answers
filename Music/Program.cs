@@ -11,15 +11,15 @@ class Program
         var _greatMusicAlbums = new List<IAlbum>();
 
         #region Seed a list of 2 MusicGroups, 2 Artists, 2 Albums
-        for (int c = 0; c < 2; c++)
+        for (int c = 0; c < 5; c++)
         {
             _greatMusicBands.Add(new csMusicGroup().Seed(rnd));
         }
-        for (int c = 0; c < 2; c++)
+        for (int c = 0; c < rnd.Next(2, 5); c++)
         {
             _greatMusicArtists.Add(new csArtist().Seed(rnd));
         }
-        for (int c = 0; c < 2; c++)
+        for (int c = 0; c < rnd.Next(2, 6); c++)
         {
             _greatMusicAlbums.Add(new csAlbum().Seed(rnd));
         }
@@ -28,6 +28,8 @@ class Program
         PresentMusicBands(_greatMusicBands);
         PresentMusicArtists(_greatMusicArtists);
         PresentMusicAlbums(_greatMusicAlbums);
+
+        PresentOldestAlbums(_greatMusicAlbums);
 
         Console.ReadKey();
     }
@@ -73,6 +75,22 @@ class Program
                 Console.WriteLine("  - No Albums released by the group");
             }
         }
+    }
+
+    private static void PresentOldestAlbums(List<IAlbum> _greatMusicAlbums)
+    {
+        Console.WriteLine("\nOldest Great Music Albums");
+        int ReleaseYear = int.MaxValue;
+        IAlbum OldestAlbum = null;
+        foreach (var item in _greatMusicAlbums)
+        {
+            if (item.ReleaseYear < ReleaseYear)
+            {
+                ReleaseYear = item.ReleaseYear;
+                OldestAlbum = item;
+            }
+        }
+        Console.WriteLine($"Oldest Album is {OldestAlbum}");
     }
 }
 

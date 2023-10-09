@@ -9,6 +9,8 @@ namespace Music
         public string Name { get; set; }
         public int ReleaseYear { get; set; }
 
+        public string ToString();
+
         public IAlbum Seed(csSeedGenerator rnd);
     }
 
@@ -16,6 +18,8 @@ namespace Music
 	{
         public string Name { get; set; }
 		public int ReleaseYear { get; set; }
+        public override string ToString() => $"Album {Name} was released {ReleaseYear}";
+
 
         public csAlbum()
 		{

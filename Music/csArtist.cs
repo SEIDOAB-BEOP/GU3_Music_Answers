@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using Helpers;
 
 namespace Music
@@ -9,6 +10,8 @@ namespace Music
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
+        public string ToString();
+
         public IArtist Seed(csSeedGenerator rnd);
     }
 
@@ -16,6 +19,7 @@ namespace Music
 	{
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public override string ToString() => $"Artist {FirstName} {LastName}";
 
         public csArtist()
 		{

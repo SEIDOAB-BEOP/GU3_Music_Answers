@@ -33,6 +33,7 @@ namespace Music
 
         public IMusicGroup Seed(csSeedGenerator rnd)
         {
+            /*
             //Create between 3 and 8 Members
             for (int i = 3; i < rnd.Next(4, 9); i++)
             {
@@ -40,7 +41,7 @@ namespace Music
             }
 
             //Create between 5 and 16 Albums
-            /*
+
             for (int i = 5; i < rnd.Next(6, 17); i++)
             {
                 this.Albums.Add(new csAlbum().Seed(rnd));
